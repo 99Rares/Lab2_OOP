@@ -70,3 +70,12 @@ complex complex::quot(complex* othet) {
 
     return rezultat_quot;
 }
+
+double complex::abs() {
+    double abs_real, abs_imag;
+
+    abs_real = this->real * this->real;
+    abs_imag = this->imag * this->imag;
+
+    return sqrt(abs_real + abs_imag);
+}

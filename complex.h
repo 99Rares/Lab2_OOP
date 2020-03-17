@@ -31,4 +31,8 @@ public:
         berechnet den Quotient. Die Funktion liefert ein Objekt
         vom Typ complex zuruck
     */
+    double abs();/*
+      berechnet den Betrag. Die Funktion liefert einen Wert
+      vom Typ double zuruck
+  */
 };
