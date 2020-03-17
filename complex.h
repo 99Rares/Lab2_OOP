@@ -17,5 +17,18 @@ public:
     void show_exp(); /*
         zeigt  die Exponentialform einer Zahl auf dem Bildschirm an
     */
+    complex add(complex* nr2);/*
+       berechnet die Summe. Die Funktion liefert ein Objekt
+       vom Typ complex zuruck
+   */
 
+    complex mult(complex* nr2);/*
+        berechnet den Produkt. Die Funktion liefert ein Objekt
+        vom Typ complex zuruck
+    */
+
+    complex quot(complex* nr2);/*
+        berechnet den Quotient. Die Funktion liefert ein Objekt
+        vom Typ complex zuruck
+    */
 };

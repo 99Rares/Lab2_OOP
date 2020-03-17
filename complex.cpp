@@ -34,3 +34,39 @@ void complex::show_exp() {
     double teta = atan(imag / real);
     //afisare_exp_form(r, teta);
 }
+complex complex::add(complex* othet) {
+    /*aduna unui nr de tip complex, un altul trimis ca parametru
+     * nici unul dintre numere nu se modifica
+     * rezultatul e un nou obiect de tip complex
+     * */
+    complex rezultat_suma(0, 0);
+    rezultat_suma.real = real + othet->real;
+    rezultat_suma.imag = othet->imag + imag;
+
+    return rezultat_suma;
+}
+
+complex complex::mult(complex* othet) {
+    /*multiplicarea unui nr de tip complex, cu un altul trimis ca parametru
+     * nici unul dintre numere nu se modifica
+     * rezultatul e un nou obiect de tip complex
+     * */
+    complex rezultat_mult(0, 0);
+    rezultat_mult.real = (real * othet->real) - (imag * othet->imag);
+    rezultat_mult.imag = (othet->real * imag) + (real * othet->imag);
+
+    return rezultat_mult;
+}
+
+complex complex::quot(complex* othet) {
+    /*divie un nr de tip complex, cu un altul trimis ca parametru
+     * nici unul dintre numere nu se modifica
+     * rezultatul e un nou obiect de tip complex
+     * */
+    double numitor = (othet->real * othet->real) + (othet->imag * othet->imag);
+    complex rezultat_quot(0, 0);
+    rezultat_quot.real = ((this->real * othet->real) + (othet->imag * othet->imag)) / numitor;
+    rezultat_quot.imag = ((othet->real * this->imag) - (this->real * othet->imag)) / numitor;
+
+    return rezultat_quot;
+}
