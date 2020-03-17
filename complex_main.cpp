@@ -56,9 +56,39 @@ void tests() {
         //trebuie sa dea 3+5i
     }
 }
-int main()
-{
+int main() {
     tests();
-    //cout << "Hello, World!";
+    //run tests
+    std::cout << "Main output: " << '\n';
+    complex* l[] = { new complex(3,4), new complex(1, 2), new complex(5, 6) };
+
+    for (int i = 0; i < sizeof(l) / 4 - 1; i++)
+        for (int j = i + 1; j < sizeof(l) / 4; j++) {
+            if (l[i]->abs() > l[j]->abs()) {
+                complex* aux;
+                aux = l[i];
+                l[i] = l[j];
+                l[j] = aux;
+            }
+        }
+    //Sorteaza randul dupa modul
+
+
+    for (int i = 0; i < (sizeof(l) / 4); i++) {
+        std::cout << "Elementul " << i + 1 << " este: ";
+        l[i]->show_compl();
+        std::cout << '\n';
+    }
+    //afiseza vectorul
+
+    complex suma_totala = complex(0, 0);
+
+    for (auto& i : l) {
+        suma_totala = suma_totala.add(i);
+    }
+    //suma totala
+
+    std::cout << "Summe : " << suma_totala.get_real() << " + " << suma_totala.get_imag() << "i" << '\n';
     return 0;
 }
+
