@@ -30,9 +30,9 @@ void complex::show_exp() {
      * apoi transfera rezultatele obtinute intr-un numar de tip complex care va fi trimis ca parametru functiei de afisare
      * apoi pt afisare apeleaza functia afisare_exp_form care afiseaza numarul sub forma polara
      * */
-    //double r = abs();
+    double r = abs();
     double teta = atan(imag / real);
-    //afisare_exp_form(r, teta);
+    afisare_exp_form(r, teta);
 }
 complex complex::add(complex* othet) {
     /*aduna unui nr de tip complex, un altul trimis ca parametru
@@ -78,4 +78,23 @@ double complex::abs() {
     abs_imag = this->imag * this->imag;
 
     return sqrt(abs_real + abs_imag);
+}
+
+void afisare_polar_form(double r, double teta) {
+    std::cout << "Polarform: " << r << "*( " << "cos(" << teta << ") + i * sin( " << teta << ")" << '\n';
+}
+
+complex complex::compute_polar() {
+    /*
+     * calculeaza r, care este modulul numarului complex si teta care este arctg de coef. imaginar si cel real
+     * apoi transfera rezultatele obtinute intr-un numar de tip complex care va fi trimis ca parametru functiei de afisare
+     * apoi pt afisare apeleaza functia afisare_polar_form care afiseaza numarul sub forma polara
+     * */
+    double r = abs();
+    double teta = atan(imag / real);
+    complex rezultat_polar_form(0, 0);
+    rezultat_polar_form.real = r * (cos(teta));
+    rezultat_polar_form.imag = r * (sin(teta));
+    afisare_polar_form(r, teta);
+    return rezultat_polar_form;
 }

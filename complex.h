@@ -34,5 +34,11 @@ public:
     double abs();/*
       berechnet den Betrag. Die Funktion liefert einen Wert
       vom Typ double zuruck
-  */
+    */
+
+    complex compute_polar();/*
+        berechnet ihre Polarform. Die Funktion liefert ein Objekt
+        vom Typ complex zuruck
+    */
+
 };
